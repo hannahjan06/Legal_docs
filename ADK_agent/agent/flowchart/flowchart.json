@@ -1,0 +1,36 @@
+{
+  "nodes": [
+    {"id": "A", "label": "Start: Agreement Signed"},
+    {"id": "B", "label": "Initial Payment Due (50%)"},
+    {"id": "C", "label": "Client Pays Initial Payment"},
+    {"id": "D", "label": "Agreement Breach - Client (Payment)"},
+    {"id": "E", "label": "Service Provider Delivers Services (within 30 days)"},
+    {"id": "F", "label": "Services Successfully Delivered"},
+    {"id": "G", "label": "Late Delivery - Penalties Apply (Section 5)"},
+    {"id": "H", "label": "Remaining Payment Due (50%)"},
+    {"id": "I", "label": "Client Pays Remaining Payment"},
+    {"id": "J", "label": "Agreement Breach - Client (Payment)"},
+    {"id": "K", "label": "Agreement Complete"},
+    {"id": "L", "label": "Termination Possible (30 days notice - Section 4)"},
+    {"id": "M", "label": "Confidentiality Obligations Continue for 2 Years (Section 3)"},
+    {"id": "N", "label": "End"}
+  ],
+  "edges": [
+    {"source": "A", "target": "B", "label": "Initiate"},
+    {"source": "B", "target": "C", "label": "Yes"},
+    {"source": "B", "target": "D", "label": "No"},
+    {"source": "C", "target": "E", "label": "Services Start"},
+    {"source": "E", "target": "F", "label": "Yes"},
+    {"source": "E", "target": "G", "label": "No"},
+    {"source": "F", "target": "H", "label": "Payment Trigger"},
+    {"source": "H", "target": "I", "label": "Yes"},
+    {"source": "H", "target": "J", "label": "No"},
+    {"source": "I", "target": "K", "label": "Finalize"},
+    {"source": "G", "target": "K", "label": "Conclude"},
+    {"source": "D", "target": "L", "label": "Breach"},
+    {"source": "J", "target": "L", "label": "Breach"},
+    {"source": "L", "target": "K", "label": "Terminate"},
+    {"source": "K", "target": "M", "label": "Post-Agreement"},
+    {"source": "M", "target": "N", "label": "Complete"}
+  ]
+}
