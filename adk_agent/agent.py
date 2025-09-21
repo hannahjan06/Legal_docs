@@ -1,10 +1,10 @@
 from google.adk.agents import SequentialAgent
 from google.adk.agents import ParallelAgent
 
-from agent.subagents.parsing import parsing_agent
-from agent.subagents.preprocess import preprocess_agent
-from agent.subagents.risk import risk_agent
-from agent.subagents.summary import summary_agent
+from adk_agent.subagents.parsing import parsing_agent
+from adk_agent.subagents.preprocess import preprocess_agent
+from adk_agent.subagents.risk import risk_agent
+from adk_agent.subagents.summary import summary_agent
 
 parse_pipeline = SequentialAgent(
     name="ParsingPipelineAgent",

@@ -1,0 +1,5 @@
+streamlit==1.38.0
+PyPDF2==3.0.1
+transformers==4.44.2
+torch>=2.0.0
+numpy==1.26.4
